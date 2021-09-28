@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "NwRV/Ghl0qA6BozohMn0B9/7fj/fCVyiMBLD61qFVpxt+3ngeD0iRHpKgGnOGg9PMp34WnKAOifmXo0LnnTxDw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Aleksandr_Goriachkin\\source\\repos\\FiniteStateMachines\\KNA_Task\\KNA_Task.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Aleksandr_Goriachkin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

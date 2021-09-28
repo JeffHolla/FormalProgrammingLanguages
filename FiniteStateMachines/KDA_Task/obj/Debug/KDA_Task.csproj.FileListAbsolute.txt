@@ -1,0 +1,11 @@
+C:\Users\Aleksandr_Goriachkin\source\repos\FiniteStateMachines\KDA_Task\bin\Debug\KDA_Task.exe.config
+C:\Users\Aleksandr_Goriachkin\source\repos\FiniteStateMachines\KDA_Task\bin\Debug\KDA_Task.exe
+C:\Users\Aleksandr_Goriachkin\source\repos\FiniteStateMachines\KDA_Task\bin\Debug\KDA_Task.pdb
+C:\Users\Aleksandr_Goriachkin\source\repos\FiniteStateMachines\KDA_Task\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Aleksandr_Goriachkin\source\repos\FiniteStateMachines\KDA_Task\bin\Debug\GeneralEntities.dll
+C:\Users\Aleksandr_Goriachkin\source\repos\FiniteStateMachines\KDA_Task\bin\Debug\GeneralEntities.pdb
+C:\Users\Aleksandr_Goriachkin\source\repos\FiniteStateMachines\KDA_Task\obj\Debug\KDA_Task.csproj.AssemblyReference.cache
+C:\Users\Aleksandr_Goriachkin\source\repos\FiniteStateMachines\KDA_Task\obj\Debug\KDA_Task.csproj.CoreCompileInputs.cache
+C:\Users\Aleksandr_Goriachkin\source\repos\FiniteStateMachines\KDA_Task\obj\Debug\KDA_Task.csproj.CopyComplete
+C:\Users\Aleksandr_Goriachkin\source\repos\FiniteStateMachines\KDA_Task\obj\Debug\KDA_Task.exe
+C:\Users\Aleksandr_Goriachkin\source\repos\FiniteStateMachines\KDA_Task\obj\Debug\KDA_Task.pdb

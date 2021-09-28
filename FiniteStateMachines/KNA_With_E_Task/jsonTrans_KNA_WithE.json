@@ -1,0 +1,50 @@
+[
+  {
+    "Value": 0,
+    "From": { "Title": "q0" },
+    "To": { "Title": "q0" },
+    "Condition": [ 0, 1 ]
+  },
+  {
+    "Value": 0,
+    "From": { "Title": "q0" },
+    "To": { "Title": "q1" },
+    "Condition": [ -1 ]
+  },
+  {
+    "Value": 0,
+    "From": { "Title": "q1" },
+    "To": { "Title": "q2" },
+    "Condition": [ -1 ]
+  },
+  {
+    "Value": 0,
+    "From": { "Title": "q1" },
+    "To": { "Title": "q4" },
+    "Condition": [ 1 ]
+  },
+  {
+    "Value": 0,
+    "From": { "Title": "q1" },
+    "To": { "Title": "q3" },
+    "Condition": [ 1 ]
+  },
+  {
+    "Value": 0,
+    "From": { "Title": "q0" },
+    "To": { "Title": "q5" },
+    "Condition": [ 1 ]
+  },
+  {
+    "Value": 0,
+    "From": { "Title": "q5" },
+    "To": { "Title": "q4" },
+    "Condition": [ 1 ]
+  },
+  {
+    "Value": 0,
+    "From": { "Title": "q2" },
+    "To": { "Title": "q6" },
+    "Condition": [ 1 ]
+  }
+]

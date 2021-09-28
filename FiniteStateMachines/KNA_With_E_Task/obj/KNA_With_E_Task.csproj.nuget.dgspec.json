@@ -1,0 +1,72 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Aleksandr_Goriachkin\\source\\repos\\FiniteStateMachines\\KNA_With_E_Task\\KNA_With_E_Task.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Aleksandr_Goriachkin\\source\\repos\\FiniteStateMachines\\GeneralEntities\\GeneralEntities.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Aleksandr_Goriachkin\\source\\repos\\FiniteStateMachines\\GeneralEntities\\GeneralEntities.csproj",
+        "projectName": "GeneralEntities",
+        "projectPath": "C:\\Users\\Aleksandr_Goriachkin\\source\\repos\\FiniteStateMachines\\GeneralEntities\\GeneralEntities.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\Aleksandr_Goriachkin\\source\\repos\\FiniteStateMachines\\KNA_With_E_Task\\KNA_With_E_Task.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Aleksandr_Goriachkin\\source\\repos\\FiniteStateMachines\\KNA_With_E_Task\\KNA_With_E_Task.csproj",
+        "projectName": "KNA_With_E_Task",
+        "projectPath": "C:\\Users\\Aleksandr_Goriachkin\\source\\repos\\FiniteStateMachines\\KNA_With_E_Task\\KNA_With_E_Task.csproj",
+        "packagesPath": "C:\\Users\\Aleksandr_Goriachkin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Aleksandr_Goriachkin\\source\\repos\\FiniteStateMachines\\KNA_With_E_Task\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\Aleksandr_Goriachkin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://localhost:8080/nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\Aleksandr_Goriachkin\\source\\repos\\FiniteStateMachines\\GeneralEntities\\GeneralEntities.csproj": {
+                "projectPath": "C:\\Users\\Aleksandr_Goriachkin\\source\\repos\\FiniteStateMachines\\GeneralEntities\\GeneralEntities.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
