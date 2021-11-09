@@ -1,0 +1,11 @@
+C:\Users\Aleksandr_Goriachkin\source\repos\FiniteStateMachines\GeneralEntities\bin\Debug\GeneralEntities.dll
+C:\Users\Aleksandr_Goriachkin\source\repos\FiniteStateMachines\GeneralEntities\bin\Debug\GeneralEntities.pdb
+C:\Users\Aleksandr_Goriachkin\source\repos\FiniteStateMachines\GeneralEntities\obj\Debug\GeneralEntities.csproj.CoreCompileInputs.cache
+C:\Users\Aleksandr_Goriachkin\source\repos\FiniteStateMachines\GeneralEntities\obj\Debug\GeneralEntities.dll
+C:\Users\Aleksandr_Goriachkin\source\repos\FiniteStateMachines\GeneralEntities\obj\Debug\GeneralEntities.pdb
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\GeneralEntities\bin\Debug\GeneralEntities.dll
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\GeneralEntities\bin\Debug\GeneralEntities.pdb
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\GeneralEntities\obj\Debug\GeneralEntities.csproj.AssemblyReference.cache
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\GeneralEntities\obj\Debug\GeneralEntities.csproj.CoreCompileInputs.cache
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\GeneralEntities\obj\Debug\GeneralEntities.dll
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\GeneralEntities\obj\Debug\GeneralEntities.pdb

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "KkO3uf8GKEiPpWGIswBgoJXh4b79Imwr6OSh05QzGxyNKTgiog6RPmOBHTH6ZE5+MlxNRsKVwAxVFxYzl5j/RA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Aleksandr_Goriachkin\\source\\repos\\FormalLanguagesTasks\\Lexer_Task_1\\KDA_Task\\KDA_Task.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Aleksandr_Goriachkin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,14 @@
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\Lexer_Task_1\obj\Debug\Lexer_Task_1.csproj.AssemblyReference.cache
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\Lexer_Task_1\obj\Debug\Lexer_Task_1.csproj.CoreCompileInputs.cache
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\Lexer_Task_1\bin\Debug\Lexer_Task_1.exe.config
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\Lexer_Task_1\bin\Debug\Lexer_Task_1.exe
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\Lexer_Task_1\bin\Debug\Lexer_Task_1.pdb
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\Lexer_Task_1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\Lexer_Task_1\bin\Debug\GeneralEntities.dll
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\Lexer_Task_1\bin\Debug\KDA_Task.exe
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\Lexer_Task_1\bin\Debug\GeneralEntities.pdb
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\Lexer_Task_1\bin\Debug\KDA_Task.pdb
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\Lexer_Task_1\bin\Debug\KDA_Task.exe.config
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\Lexer_Task_1\obj\Debug\Lexer_Task_1.csproj.CopyComplete
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\Lexer_Task_1\obj\Debug\Lexer_Task_1.exe
+C:\Users\Aleksandr_Goriachkin\source\repos\FormalLanguagesTasks\Lexer_Task_1\Lexer_Task_1\obj\Debug\Lexer_Task_1.pdb
