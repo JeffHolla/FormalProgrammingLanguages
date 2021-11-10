@@ -16,9 +16,9 @@ namespace Lexer_Task_1
     //                      <арифметическое выражение>
     //      <операторы>
     // next
-    
+
     // Уровень 2
-    
+
     // <лог. выражение> -> <выражение сравнения>|<логическое выражение><логическая операция><выражение сравнения>
     // <выражение сравнения> -> <операнд>|<операнд><операция сравнения><операнд>
     // <операция сравнения> -> <|>|=|<>
@@ -56,68 +56,57 @@ namespace Lexer_Task_1
             };
 
             // for <идентификатор> = <арифметическое выражение> to <арифметическое выражение> <операторы>
-            var input = "for iter = 5 * 2 to 5 + 20 it = 50 - 72 next"; //Console.ReadLine();
-            Console.WriteLine($"Input seq is [{input}]");
+            var input = "for iter = 5 * 2 to 5 + 20 it = 50 - 72 next"; 
+            var input_2 = "iter = 5 * 2 to 5 + 20 it = 50 - 72 next"; 
+            var input_3 = "for = 5 * 2 to 5 + 20 it = 50 - 72 next"; 
+            var input_4 = "for iter 5 * 2 to 5 + 20 it = 50 - 72 next"; 
+            var input_5 = "for iter = * 2 to 5 + 20 it = 50 - 72 next"; 
+            var input_6 = "for iter = 5 2 to 5 + 20 it = 50 - 72 next"; 
+            var input_7 = "for iter = 5 * to 5 + 20 it = 50 - 72 next"; 
+            var input_9 = "for iter = 5 * 2 to + 20 it = 50 - 72 next"; 
+            var input_10 = "for iter = 5 * 2 to 5 20 it = 50 - 72 next"; 
+            var input_11 = "for iter = 5 * 2 to 5 + it = 50 - 72 next"; 
+            var input_12 = "for iter = 5 * 2 to 5 + 20 = 50 - 72 next"; 
+            var input_13 = "for iter = 5 * 2 to 5 + 20 it 50 - 72 next"; 
+            var input_14 = "for iter = 5 * 2 to 5 + 20 it = - 72 next"; 
+            var input_15 = "for iter = 5 * 2 to 5 + 20 it = 50 72 next"; 
+            var input_16 = "for iter = 5 * 2 to 5 + 20 it = 50 - next"; 
+            var input_17 = "for iter = 5 * 2 to 5 + 20 it = 50 - 72"; 
+
+            var input_extented_arithm_1 = "for iter = 5 * 2 + 205 - 2 / 5 to 5 + 20 it = 50 - 72 next"; 
+            var input_extented_arithm_2 = "for iter = 5 * 2 to 5 + 20 - 15 / 2 it = 50 - 72 next"; 
+            var input_extented_arithm_3 = "for iter = 5 * 2 to 5 + 20 it = 50 - 72 + 5 * 2 / 2 next"; 
+
+            var input_extented_operator = "for iter = 5 * 2 to 5 + 20 - 15 / 2 it = 50 - 72 ite = 15 another = 125 next"; 
+            //Console.WriteLine($"Input seq is [{input}]");
             Console.WriteLine();
 
             KDA kda = new KDA(startState, transitions);
 
             kda.Start(input, showStates: false);
+            kda.Start(input_2, showStates: false);
+            kda.Start(input_3, showStates: false);
+            kda.Start(input_4, showStates: false);
+            kda.Start(input_5, showStates: false);
+            kda.Start(input_6, showStates: false);
+            kda.Start(input_7, showStates: false);
+            kda.Start(input_9, showStates: false);
+            kda.Start(input_10, showStates: false);
+            kda.Start(input_11, showStates: false);
+            kda.Start(input_12, showStates: false);
+            kda.Start(input_13, showStates: false);
+            kda.Start(input_14, showStates: false);
+            kda.Start(input_15, showStates: false);
+            kda.Start(input_16, showStates: false);
+            kda.Start(input_17, showStates: false);
+
+
+            kda.Start(input_extented_arithm_1, showStates: false);
+            kda.Start(input_extented_arithm_2, showStates: false);
+            kda.Start(input_extented_arithm_3, showStates: false);
+            kda.Start(input_extented_operator, showStates: false);
 
             Console.ReadKey();
-        }
-
-        public enum LexemEnum
-        {
-            KeyWord, // { for | to | next }
-            Identifier, // Vars
-            Assignment, // = 
-            ArithmeticOperation, // { +|-|/|* }
-            Constant, // Nums
-            LogicOperation, // { And | Or }
-            Unknown
-        }
-
-        public static class Lexems
-        {
-            public static string[] KeyWord => new string[] { "for", "to", "next" };
-            public static string IdentifierRegexPattern => @"[A-Za-z]+[0-9]*";
-            public static string[] Assignment => new string[] { "=" };
-            public static string[] ArithmeticOperation => new string[] { "+", "-", "/", "*" };
-            public static string ConstantRegexPattern => @"[1-9]+[0-9]*";
-            public static string[] LogicOperation => new string[] { "and", "or"};
-        }
-
-        public enum StatesEnum
-        {
-            Symbol,
-            Digit,
-            Space,
-
-            LowerSymbol,
-            GreaterSymbol,
-            EqualSymbol,
-
-            Plus,
-            Minus,
-            Divide,
-            Multiply
-        }
-
-        public static class States
-        {
-            public static string Symbol => StatesEnum.Symbol.ToString();
-            public static string Digit = StatesEnum.Digit.ToString();
-            public static string Space = StatesEnum.Space.ToString();
-
-            public static string LowerSymbol = StatesEnum.LowerSymbol.ToString();
-            public static string GreaterSymbol = StatesEnum.GreaterSymbol.ToString();
-            public static string EqualSymbol = StatesEnum.EqualSymbol.ToString();
-
-            public static string Plus = StatesEnum.Plus.ToString();
-            public static string Minus = StatesEnum.Minus.ToString();
-            public static string Divide = StatesEnum.Divide.ToString();
-            public static string Multiply = StatesEnum.Multiply.ToString();
         }
 
         static void KDA_CreateJson()
@@ -466,5 +455,58 @@ namespace Lexer_Task_1
                 writer.WriteLine(tmp);
             }
         }
+    }
+
+    public enum LexemEnum
+    {
+        KeyWord, // { for | to | next }
+        Identifier, // Vars
+        Assignment, // = 
+        ArithmeticOperation, // { +|-|/|* }
+        Constant, // Nums
+        LogicOperation, // { And | Or }
+        Unknown
+    }
+
+    public static class Lexems
+    {
+        public static string[] KeyWord => new string[] { "for", "to", "next" };
+        public static string IdentifierRegexPattern => @"[A-Za-z]+[0-9]*";
+        public static string[] Assignment => new string[] { "=" };
+        public static string[] ArithmeticOperation => new string[] { "+", "-", "/", "*" };
+        public static string ConstantRegexPattern => @"[1-9]+[0-9]*";// "(0)|([1-9]+[0-9]*)"
+        public static string[] LogicOperation => new string[] { "and", "or" };
+    }
+
+    public enum StatesEnum
+    {
+        Symbol,
+        Digit,
+        Space,
+
+        LowerSymbol,
+        GreaterSymbol,
+        EqualSymbol,
+
+        Plus,
+        Minus,
+        Divide,
+        Multiply
+    }
+
+    public static class States
+    {
+        public static string Symbol => StatesEnum.Symbol.ToString();
+        public static string Digit = StatesEnum.Digit.ToString();
+        public static string Space = StatesEnum.Space.ToString();
+
+        public static string LowerSymbol = StatesEnum.LowerSymbol.ToString();
+        public static string GreaterSymbol = StatesEnum.GreaterSymbol.ToString();
+        public static string EqualSymbol = StatesEnum.EqualSymbol.ToString();
+
+        public static string Plus = StatesEnum.Plus.ToString();
+        public static string Minus = StatesEnum.Minus.ToString();
+        public static string Divide = StatesEnum.Divide.ToString();
+        public static string Multiply = StatesEnum.Multiply.ToString();
     }
 }
