@@ -56,55 +56,22 @@ namespace Lexer_Task_1
             };
 
             // for <идентификатор> = <арифметическое выражение> to <арифметическое выражение> <операторы>
-            var input = "for iter = 5 * 2 to 5 + 20 it = 50 - 72 next"; 
-            var input_2 = "iter = 5 * 2 to 5 + 20 it = 50 - 72 next"; 
-            var input_3 = "for = 5 * 2 to 5 + 20 it = 50 - 72 next"; 
-            var input_4 = "for iter 5 * 2 to 5 + 20 it = 50 - 72 next"; 
-            var input_5 = "for iter = * 2 to 5 + 20 it = 50 - 72 next"; 
-            var input_6 = "for iter = 5 2 to 5 + 20 it = 50 - 72 next"; 
-            var input_7 = "for iter = 5 * to 5 + 20 it = 50 - 72 next"; 
-            var input_9 = "for iter = 5 * 2 to + 20 it = 50 - 72 next"; 
-            var input_10 = "for iter = 5 * 2 to 5 20 it = 50 - 72 next"; 
-            var input_11 = "for iter = 5 * 2 to 5 + it = 50 - 72 next"; 
-            var input_12 = "for iter = 5 * 2 to 5 + 20 = 50 - 72 next"; 
-            var input_13 = "for iter = 5 * 2 to 5 + 20 it 50 - 72 next"; 
-            var input_14 = "for iter = 5 * 2 to 5 + 20 it = - 72 next"; 
-            var input_15 = "for iter = 5 * 2 to 5 + 20 it = 50 72 next"; 
-            var input_16 = "for iter = 5 * 2 to 5 + 20 it = 50 - next"; 
-            var input_17 = "for iter = 5 * 2 to 5 + 20 it = 50 - 72"; 
+            // 5 2 * iter =  
+            var input = "for iter = 5 * 2 to 5 + 20 it = 50 - 72 next";
 
-            var input_extented_arithm_1 = "for iter = 5 * 2 + 205 - 2 / 5 to 5 + 20 it = 50 - 72 next"; 
-            var input_extented_arithm_2 = "for iter = 5 * 2 to 5 + 20 - 15 / 2 it = 50 - 72 next"; 
-            var input_extented_arithm_3 = "for iter = 5 * 2 to 5 + 20 it = 50 - 72 + 5 * 2 / 2 next"; 
+            //var input_extented_arithm_1 = "for iter = 5 * 2 + 205 - 2 / 5 to 5 + 20 it = 50 - 72 next"; 
+            //var input_extented_arithm_2 = "for iter = 5 * 2 to 5 + 20 - 15 / 2 it = 50 - 72 next"; 
+            //var input_extented_arithm_3 = "for iter = 5 * 2 to 5 + 20 it = 50 - 72 + 5 * 2 / 2 next"; 
 
-            var input_extented_operator = "for iter = 5 * 2 to 5 + 20 - 15 / 2 it = 50 - 72 ite = 15 another = 125 next"; 
-            //Console.WriteLine($"Input seq is [{input}]");
             Console.WriteLine();
 
             KDA kda = new KDA(startState, transitions);
 
-            kda.Start(input, showStates: false);
-            kda.Start(input_2, showStates: false);
-            kda.Start(input_3, showStates: false);
-            kda.Start(input_4, showStates: false);
-            kda.Start(input_5, showStates: false);
-            kda.Start(input_6, showStates: false);
-            kda.Start(input_7, showStates: false);
-            kda.Start(input_9, showStates: false);
-            kda.Start(input_10, showStates: false);
-            kda.Start(input_11, showStates: false);
-            kda.Start(input_12, showStates: false);
-            kda.Start(input_13, showStates: false);
-            kda.Start(input_14, showStates: false);
-            kda.Start(input_15, showStates: false);
-            kda.Start(input_16, showStates: false);
-            kda.Start(input_17, showStates: false);
+            kda.Start(input, showStates: false, showLexems: false);
 
-
-            kda.Start(input_extented_arithm_1, showStates: false);
-            kda.Start(input_extented_arithm_2, showStates: false);
-            kda.Start(input_extented_arithm_3, showStates: false);
-            kda.Start(input_extented_operator, showStates: false);
+            //kda.Start(input_extented_arithm_1, showStates: false);
+            //kda.Start(input_extented_arithm_2, showStates: false);
+            //kda.Start(input_extented_arithm_3, showStates: false);
 
             Console.ReadKey();
         }

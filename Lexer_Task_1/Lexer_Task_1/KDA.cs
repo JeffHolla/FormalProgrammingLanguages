@@ -14,6 +14,10 @@ namespace Lexer_Task_1
 
         private State _сurrentState;
 
+        private List<PostfixEntry> Entries = new List<PostfixEntry>();
+
+        private List<PostfixEntry> AwaitsList = new List<PostfixEntry>();
+
         public KDA(State startState, IEnumerable<Transition> transitions)
         {
             Transitions = transitions;
@@ -87,6 +91,10 @@ namespace Lexer_Task_1
             IsForKeyWord(lexems);
 
             Console.WriteLine();
+            Console.WriteLine("Final entryList :");
+            PrintEntryList();
+
+            Console.WriteLine();
         }
 
         private bool IsForKeyWord(List<Lexem> lexems)
@@ -127,12 +135,15 @@ namespace Lexer_Task_1
         // <арифметическое выражение> -> <операнд>|<арифметическое выражение><арифметическая операция><операнд>
         // <операнд> -> <идентификатор>|<константа>
         // <арифметическая операция> -> +|-|/|*
-        private bool IsArithmeticOperation(ref List<Lexem> lexems, ref int skippedPositions, bool isFirstCheck = true)
+        private bool IsArithmeticOperation(ref List<Lexem> lexems, ref int skippedPositions)
         {
             int i = 0;
 
             if (lexems[i].Type == LexemEnum.KeyWord && lexems[i].Value == "to")
             {
+                WriteCmd(Cmd.SET);
+                PrintEntryList();
+
                 // i - чтобы не пропустить 'to'
                 skippedPositions += 1;
                 lexems = lexems.Skip(i + 1).ToList();
@@ -162,6 +173,31 @@ namespace Lexer_Task_1
             }
             else
             {
+                switch (lexems[i].Type)
+                {
+                    case LexemEnum.Identifier:
+                        WriteVar(i, lexems);
+                        break;
+                    case LexemEnum.Constant:
+                        WriteConst(i, lexems);
+                        break;
+                }
+
+                switch (lexems[i + 2].Type)
+                {
+                    case LexemEnum.Identifier:
+                        WriteVar(i + 2, lexems);
+                        break;
+                    case LexemEnum.Constant:
+                        WriteConst(i + 2, lexems);
+                        break;
+                }
+
+                Cmd cmd = GetArithmeticCmd(lexems[i + 1].Value);
+
+                WriteCmd(cmd);
+                PrintEntryList();
+
                 skippedPositions += 3;
                 lexems = lexems.Skip(3).ToList();
             }
@@ -202,6 +238,45 @@ namespace Lexer_Task_1
             }
             else
             {
+                // Write Var Iter
+                Entries.Add(new PostfixEntry
+                {
+                    EntryType = EntryType.Var,
+                    Value = Entries[0].Value
+                });
+
+
+                switch (lexems[i].Type)
+                {
+                    case LexemEnum.Identifier:
+                        WriteVar(i, lexems);
+                        break;
+                    case LexemEnum.Constant:
+                        WriteConst(i, lexems);
+                        break;
+                }
+
+                switch (lexems[i + 2].Type)
+                {
+                    case LexemEnum.Identifier:
+                        WriteVar(i + 2, lexems);
+                        break;
+                    case LexemEnum.Constant:
+                        WriteConst(i + 2, lexems);
+                        break;
+                }
+
+                Cmd cmd = GetArithmeticCmd(lexems[i + 1].Value);
+
+                WriteCmd(cmd);
+                PrintEntryList();
+
+
+                WriteCmd(Cmd.CMPE);
+
+                WriteCmdPtr(-1);
+                WriteCmd(Cmd.JZ);
+
                 skippedPositions += 3;
                 lexems = lexems.Skip(3).ToList();
             }
@@ -224,6 +299,9 @@ namespace Lexer_Task_1
                 Console.WriteLine($"Ошибка! Ожидался знак '=' на позиции [{i + 1 + skippedPositions}]");
                 return false;
             }
+
+            WriteVar(i, lexems);
+            PrintEntryList();
 
             skippedPositions += 2;
             lexems = lexems.Skip(2).ToList();
@@ -303,12 +381,64 @@ namespace Lexer_Task_1
                 }
                 else
                 {
+                    switch (lexems[i].Type)
+                    {
+                        case LexemEnum.Identifier:
+                            WriteVar(i, lexems);
+                            break;
+                        case LexemEnum.Constant:
+                            WriteConst(i, lexems);
+                            break;
+                    }
+
+                    switch (lexems[i + 2].Type)
+                    {
+                        case LexemEnum.Identifier:
+                            WriteVar(i + 2, lexems);
+                            break;
+                        case LexemEnum.Constant:
+                            WriteConst(i + 2, lexems);
+                            break;
+                    }
+
+                    Cmd cmd = GetArithmeticCmd(lexems[i + 1].Value);
+
+                    WriteCmd(cmd);
+                    PrintEntryList();
+
+                    WriteCmd(Cmd.SET);
+
                     skippedPositions += 3;
                     lexems = lexems.Skip(3).ToList();
                 }
             }
             else
             {
+                switch (lexems[i].Type)
+                {
+                    case LexemEnum.Identifier:
+                        WriteVar(i, lexems);
+                        break;
+                    case LexemEnum.Constant:
+                        WriteConst(i, lexems);
+                        break;
+                }
+
+                switch (lexems[i + 2].Type)
+                {
+                    case LexemEnum.Identifier:
+                        WriteVar(i + 2, lexems);
+                        break;
+                    case LexemEnum.Constant:
+                        WriteConst(i + 2, lexems);
+                        break;
+                }
+
+                Cmd cmd = GetArithmeticCmd(lexems[i + 1].Value);
+
+                WriteCmd(cmd);
+                PrintEntryList();
+
                 skippedPositions += 3;
                 lexems = lexems.Skip(3).ToList();
             }
@@ -329,6 +459,37 @@ namespace Lexer_Task_1
             {
                 if (lexems.Count == 1 && lexems[i].Type == LexemEnum.KeyWord && lexems[i].Value == "next")
                 {
+                    // Write Var Iter
+                    Entries.Add(new PostfixEntry
+                    {
+                        EntryType = EntryType.Var,
+                        Value = Entries[0].Value
+                    });
+
+                    // Write Var Iter += 1
+                    Entries.Add(new PostfixEntry
+                    {
+                        EntryType = EntryType.Var,
+                        Value = Entries[0].Value
+                    });
+
+                    // Write Const 1
+                    Entries.Add(new PostfixEntry
+                    {
+                        EntryType = EntryType.Const,
+                        Value = "1"
+                    });
+
+                    WriteCmd(Cmd.ADD);
+
+                    WriteCmd(Cmd.SET);
+
+                    WriteCmdPtr(6);
+
+                    WriteCmd(Cmd.JMP);
+
+                    SetCmdPtr(-1, Entries.Count - 1);
+
                     return true;
                 }
                 else
@@ -342,6 +503,59 @@ namespace Lexer_Task_1
 
             return true;
         }
+
+        private int WriteCmd(Cmd cmd)
+        {
+            Entries.Add(new PostfixEntry
+            {
+                Cmd = cmd,
+                EntryType = EntryType.Cmd
+            });
+
+            return Entries.Count - 1;
+        }
+
+        private int WriteVar(int index, List<Lexem> lexems)
+        {
+            Entries.Add(new PostfixEntry
+            {
+                EntryType = EntryType.Var,
+                Value = lexems[index].Value
+            });
+
+            return Entries.Count - 1;
+        }
+
+        private int WriteConst(int index, List<Lexem> lexems)
+        {
+            Entries.Add(new PostfixEntry
+            {
+                EntryType = EntryType.Const,
+                Value = lexems[index].Value
+            });
+
+            return Entries.Count - 1;
+        }
+
+        private int WriteCmdPtr(int ptr)
+        {
+            Entries.Add(new PostfixEntry
+            {
+                EntryType = EntryType.CmdPtr,
+                CmdPtr = ptr,
+            });
+
+            return Entries.Count - 1;
+        }
+
+        private void SetCmdPtr(int indexToChange, int newPtr)
+        {
+            var index = Entries.IndexOf(Entries.First(x => x.CmdPtr == indexToChange));
+            Entries[index].CmdPtr = newPtr;
+        }
+
+
+
 
         private LexemEnum GetLexemType(string lexem)
         {
@@ -374,6 +588,42 @@ namespace Lexer_Task_1
                 return LexemEnum.Unknown;
             }
         }
+
+        public void PrintEntryList()
+        {
+            Console.WriteLine();
+            foreach (var entry in Entries)
+            {
+                Console.Write($"{GetEntryString(entry)} ");
+            }
+            Console.WriteLine();
+        }
+
+        public string GetEntryString(PostfixEntry entry)
+        {
+            if (entry.EntryType == EntryType.Var) return entry.Value;
+            else if (entry.EntryType == EntryType.Const) return entry.Value;
+            else if (entry.EntryType == EntryType.Cmd) return entry.Cmd.ToString();
+            else if (entry.EntryType == EntryType.CmdPtr) return entry.CmdPtr.ToString();
+            throw new ArgumentException("PostfixEntry");
+        }
+
+        public Cmd GetArithmeticCmd(string arithmeticOp)
+        {
+            switch (arithmeticOp)
+            {
+                case "+":
+                    return Cmd.ADD;
+                case "-":
+                    return Cmd.SUB;
+                case "*":
+                    return Cmd.MUL;
+                case "/":
+                    return Cmd.DIV;
+            }
+
+            throw new Exception($"Not found Arithmetic Operation in [{arithmeticOp}]");
+        }
     }
 
 
@@ -391,5 +641,42 @@ namespace Lexer_Task_1
         {
             return $"[{Value}] [{Type}]";
         }
+    }
+
+    public class PostfixEntry
+    {
+        public int Index { get; set; }
+        public EntryType EntryType { get; set; }
+        public Cmd? Cmd { get; set; }
+        public string Value { get; set; }
+        public int? CmdPtr { get; set; }
+    }
+
+
+    public enum EntryType
+    {
+        Cmd,
+        Var,
+        Const,
+        CmdPtr
+    }
+
+    public enum Cmd
+    {
+        JMP,
+        JZ,
+        SET,
+        ADD,
+        SUB,
+        MUL,
+        DIV,
+        AND,
+        OR,
+        CMPE,
+        CMPNE,
+        CMPL,
+        CMPLE,
+
+        NotFound
     }
 }
