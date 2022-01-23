@@ -56,22 +56,26 @@ namespace Lexer_Task_1
             };
 
             // for <идентификатор> = <арифметическое выражение> to <арифметическое выражение> <операторы>
-            // 5 2 * iter =  
-            var input = "for iter = 5 * 2 to 5 + 20 it = 50 - 72 next";
+            // [iter [5 2 MUL] SET] [[iter [5 7 ADD] CMPE] 23 JZ] [it [iter 72 SUB] SET] [iter [iter 1 ADD] SET] [6 JMP]
+            var input = "for iter = 5 * 2 to 5 + 7 it = iter - 72 next";
 
-            //var input_extented_arithm_1 = "for iter = 5 * 2 + 205 - 2 / 5 to 5 + 20 it = 50 - 72 next"; 
-            //var input_extented_arithm_2 = "for iter = 5 * 2 to 5 + 20 - 15 / 2 it = 50 - 72 next"; 
-            //var input_extented_arithm_3 = "for iter = 5 * 2 to 5 + 20 it = 50 - 72 + 5 * 2 / 2 next"; 
+            //var input_extented_arithm_1 = "for iter = 5 * 2 + 205 - 2 to 5 + 210 it = 50 - 72 next";
+            //var input_extented_arithm_2 = "for iter = 5 * 2 to 6 * 10 / 20 + 10 it = 50 - 72 next";
+            //var input_extented_arithm_3 = "for iter = 5 * 2 to 5 + 8 it = 50 * 72 * 5 / 2 next";
+
+            //var input_extented_operator = "for iter = 5 * 2 to 5 + 8 it = 50 - 72 ite = 15 another = 125 next";
 
             Console.WriteLine();
 
             KDA kda = new KDA(startState, transitions);
 
-            kda.Start(input, showStates: false, showLexems: false);
+            //kda.Start(input, showStates: false, showIntepreterSteps: true);
 
-            //kda.Start(input_extented_arithm_1, showStates: false);
-            //kda.Start(input_extented_arithm_2, showStates: false);
-            //kda.Start(input_extented_arithm_3, showStates: false);
+            //kda.Start(input_extented_arithm_1, showIntepreterSteps: true);
+            //kda.Start(input_extented_arithm_2, showIntepreterSteps: true);
+            //kda.Start(input_extented_arithm_3, showIntepreterSteps: true);
+
+            //kda.Start(input_extented_operator, showIntepreterSteps: true);
 
             Console.ReadKey();
         }
